@@ -18,6 +18,23 @@ List<String>sura_name=["الفاتحه","البقرة","آل عمران","الن
   Widget build(BuildContext context) {
     return Container(width: double.infinity,
       child: Column(children: [Image.asset("assets/images/quran_main_pg.png"),
+        Divider(
+          color: MyThemeData.colorGold,
+          indent: 10,thickness: 3,
+          height: 5,
+          endIndent: 10,
+        ),
+        Text(
+          "SuraName",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        Divider(
+          color: MyThemeData.colorGold,thickness: 3,
+          indent: 10,
+          height: 20,
+          endIndent: 10,
+        ),
+
       Expanded(
         child: ListView.separated(separatorBuilder: (context, index) =>
             Divider(color: MyThemeData.colorGold,endIndent: 20,indent: 20),
@@ -25,8 +42,8 @@ List<String>sura_name=["الفاتحه","البقرة","آل عمران","الن
             itemBuilder: ((context, index) {
           return sura_items(sura_name[index],index);
         })),
-      )
-      
+      ),
+
       
       ]),
     );

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:islamei/home/ahadeth_tab.dart';
 import 'package:islamei/quran/quran_tab.dart';
 import 'package:islamei/home/radio_tab.dart';
-import 'package:islamei/home/sebha_tab.dart';
+import 'package:islamei/sebha/sebha_tab.dart';
 import 'package:islamei/my_theme.dart';
+
+import 'Settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home";
@@ -14,9 +16,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-
     return Stack(children: [
       Image.asset(
         "assets/images/background.png",
@@ -59,15 +61,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     size: 35),
                 label: 'Radio',
                 backgroundColor: MyThemeData.colorGold,
-              )
+              ),
+              BottomNavigationBarItem(
+                  icon: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.settings,
+                        size: 35,
+                      )),label:"Settings")
             ]),
       ),
     ]);
   }
-  List<Widget>tabs=[
-      QuranTab(),
+
+  List<Widget> tabs = [
+    QuranTab(),
     SebhaTab(),
-   AhadethTab(),
+    AhadethTab(),
     RadioTab(),
-      ];
+    SettingsTab(),
+  ];
 }
