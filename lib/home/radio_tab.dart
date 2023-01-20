@@ -22,11 +22,11 @@ class RadioTab extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.keyboard_double_arrow_left, size: 50,color: MyThemeData.colorGold),
-            Icon(Icons.play_arrow, size: 70,color: MyThemeData.colorGold),
+            Icon(Icons.keyboard_double_arrow_left, size: 50,color: MyThemeData.primaryColor),
+            Icon(Icons.play_arrow, size: 70,color: MyThemeData.primaryColor),
             Icon(
               Icons.keyboard_double_arrow_right,
-              size: 50,color: MyThemeData.colorGold
+              size: 50,color: MyThemeData.primaryColor
             )
           ],
         )

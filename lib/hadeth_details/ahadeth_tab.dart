@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamei/hadeth_details/hadeth_details.dart';
 import 'package:islamei/my_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethTab extends StatefulWidget {
   static const String routeName = "Ahadeth";
@@ -20,34 +21,40 @@ class _AhadethTabState extends State<AhadethTab> {
       body: Column(children: [
         Image.asset("assets/images/image_ahades.png"),
         Divider(
-          color: MyThemeData.colorGold,
+          color: MyThemeData.primaryColor,
           indent: 10,
           height: 9,
-          endIndent: 10,thickness: 3,
+          endIndent: 10,
+          thickness: 3,
         ),
         Text(
-          "Ahadeth",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          AppLocalizations.of(context)!.ahadeth,
+          style:  TextStyle(
+              fontSize: 25,color: MyThemeData.primaryColor,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic),
         ),
         Divider(
-          color: MyThemeData.colorGold,
+          color: MyThemeData.primaryColor,
           indent: 10,
-          height: 20,thickness: 3,
+          height: 20,
+          thickness: 5,
           endIndent: 10,
         ),
         Ahadeth.isEmpty
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : Expanded(
                 child: ListView.separated(
                   separatorBuilder: (context, index) => Divider(
-                    color: MyThemeData.colorGold,
+                    color: MyThemeData.primaryColor,
                   ),
                   itemCount: Ahadeth.length,
                   itemBuilder: (context, index) {
-                    return InkWell(onTap: (){
-                      Navigator.pushNamed(context, HadethDetails.routeName,
-                      arguments: Ahadeth[index]);
-                    },
+                    return InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, HadethDetails.routeName,
+                            arguments: Ahadeth[index]);
+                      },
                       child: Text(
                         Ahadeth[index].title,
                         style: Theme.of(context).textTheme.subtitle1,
@@ -75,7 +82,6 @@ class _AhadethTabState extends State<AhadethTab> {
       HadethDate hadethDate = HadethDate(title, HadethLiens);
       Ahadeth.add(hadethDate);
       setState(() {});
-
     }
   }
 }

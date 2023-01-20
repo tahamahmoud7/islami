@@ -1,46 +1,81 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class MyThemeData {
-  static Color colorBlack =  Color.fromRGBO(36, 36, 36, 1.0);
-  static Color colorGold =  Color.fromRGBO(183, 147, 95, 1.0);
+  static Color primaryColor = Color(0xFFB7935F);
+  static Color OnprimaryColor = Color(0xFF79643D);
+  static Color primaryColorDark = Color(0xFF12182A);
+  static Color BlackColor = Color(0xFF242424);
 
-  static ThemeData ligthTheme = ThemeData(
-      scaffoldBackgroundColor: Colors.transparent,
+  static Color WhiteColor = Color(0xFFFFFFFF);
+  static Color YellowColor = Color(0xFFFACC1D);
+
+  static final ThemeData lightTheme = ThemeData(
+      primaryColor: primaryColor,
       appBarTheme: AppBarTheme(
-        iconTheme: IconThemeData(color:colorBlack ) ,
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-
         centerTitle: true,
-      ),
+          color: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: BlackColor)),
       textTheme: TextTheme(
-          headline1: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: colorBlack,
-          ),
-          subtitle1: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: colorBlack,
-          ),
-      headline2: TextStyle(backgroundColor: Color.fromRGBO(122, 92, 58, 1.0))
-      ));
-
-  static ThemeData darkTheme = ThemeData(
-      scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
+        headline1: TextStyle(
+          fontSize: 30,
+          color: BlackColor,
+          fontWeight: FontWeight.w700,
+        ),
+        headline2: TextStyle(
+          fontSize: 25,
+          color: BlackColor,
+          fontWeight: FontWeight.w400,
+        ),
+        headline3: TextStyle(
+          fontSize: 25,
+          color: WhiteColor,
+          fontWeight: FontWeight.w400,),
+        subtitle1: TextStyle(
+          fontSize: 25,
+          color: BlackColor,
+          fontWeight: FontWeight.w500,
+        ),
+        bodyText1: TextStyle(
+          fontSize: 20,
+          color: BlackColor,
+          fontWeight: FontWeight.w500,
+        ),
       ),
-      textTheme: const TextTheme(
-          headline2: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      )),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor:colorGold,
-  unselectedItemColor: Colors.white,
-  selectedItemColor:Colors.black)
-  );
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: BlackColor, unselectedItemColor: Colors.white
+      ),
+      );
+
+  static final ThemeData darkTheme = ThemeData(
+      primaryColor: primaryColorDark,
+      appBarTheme: AppBarTheme(
+          centerTitle: true,
+          color: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: WhiteColor)),
+      textTheme: TextTheme(
+        headline1: TextStyle(
+          fontSize: 30,
+          color: WhiteColor,
+          fontWeight: FontWeight.w700,
+        ),
+        headline2: TextStyle(
+          fontSize: 25,
+          color: YellowColor,
+          fontWeight: FontWeight.w400,
+        ),
+        subtitle1: TextStyle(
+          fontSize: 25,
+          color: YellowColor,
+          fontWeight: FontWeight.w500,
+        ),
+        bodyText1: TextStyle(
+          fontSize: 20,
+          color: YellowColor,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: YellowColor, unselectedItemColor: Colors.white));
 }

@@ -11,9 +11,9 @@ class AyaItem extends StatelessWidget {
       style: Theme
           .of(context)
           .textTheme
-          .subtitle1
+          .headline1
           ?.copyWith(fontStyle: FontStyle.normal,
-      letterSpacing: 1,
+          letterSpacing: .2
       ),
       textAlign: TextAlign.center,);
   }

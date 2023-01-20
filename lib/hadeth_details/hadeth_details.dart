@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamei/home/ahadeth_tab.dart';
+import 'package:islamei/hadeth_details/ahadeth_tab.dart';
 import 'package:islamei/my_theme.dart';
 
 class HadethDetails extends StatelessWidget {
@@ -19,14 +19,14 @@ class HadethDetails extends StatelessWidget {
           title: Text(args.title, style: Theme.of(context).textTheme.headline1),
         ),
         body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
-          padding: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+          padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 20),
           decoration: BoxDecoration(color: Colors.white70,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50)),
               border: Border.all(
-                color: MyThemeData.colorGold,width: 2
+                color: MyThemeData.primaryColor,width: 2
               )),
           child: ListView.builder(
               itemCount: args.content.length,

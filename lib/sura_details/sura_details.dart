@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamei/my_theme.dart';
 import 'package:islamei/sura_details/aya.dart';
-import 'aya.dart';
+
 
 class sura_details_Screen extends StatefulWidget {
   static const String routeName = "sura_details";
@@ -32,14 +32,14 @@ class _sura_details_ScreenState extends State<sura_details_Screen> {
             title: Text(args.SuraName,
                 style: Theme.of(context).textTheme.headline1),
           ),
-          body: Container(margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+          body: Container(margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
             decoration: BoxDecoration(
                 color: Colors.white70,
-                border: Border.all(color: MyThemeData.colorGold, width: 3),
-                borderRadius: BorderRadius.only(
+                border: Border.all(color: MyThemeData.primaryColor, width: 3),
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(50),
                     bottomRight: Radius.circular(50))),
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               vertical: 25,
               horizontal: 25,
             ),
@@ -48,7 +48,7 @@ class _sura_details_ScreenState extends State<sura_details_Screen> {
                 : ListView.separated(
                     separatorBuilder: (context, index) {
                       return Divider(
-                        color: MyThemeData.colorGold,
+                        color: MyThemeData.primaryColor,
                         endIndent: 20,
                         indent: 20,
                       );
@@ -76,5 +76,5 @@ class SuraDetailsArgs {
   String SuraName;
   int Index;
 
-  SuraDetailsArgs(this.SuraName, this.Index);
+  SuraDetailsArgs(this.SuraName, this.Index, );
 }

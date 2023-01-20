@@ -1,50 +1,167 @@
 import 'package:flutter/material.dart';
 import 'package:islamei/my_theme.dart';
 import 'package:islamei/quran/sura_items.dart';
-import 'sura_items.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class QuranTab extends StatelessWidget {
   static const String routeName = "Quran";
-List<String>sura_name=["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
-  ,"يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون"
-  ,"النّور","الفرقان","الشعراء","النّمل","القصص","العنكبوت","الرّوم","لقمان","السجدة","الأحزاب","سبأ"
-  ,"فاطر","يس","الصافات","ص","الزمر","غافر","فصّلت","الشورى","الزخرف","الدّخان","الجاثية","الأحقاف"
-  ,"محمد","الفتح","الحجرات","ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة"
-  ,"الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج"
-  ,"نوح","الجن","المزّمّل","المدّثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الإنفطار"
-  ,"المطفّفين","الإنشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","الليل","الضحى","الشرح"
-  ,"التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر",
-  "الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
+  List<String> sura_name = [
+    "الفاتحه",
+    "البقرة",
+    "آل عمران",
+    "النساء",
+    "المائدة",
+    "الأنعام",
+    "الأعراف",
+    "الأنفال",
+    "التوبة",
+    "يونس",
+    "هود",
+    "يوسف",
+    "الرعد",
+    "إبراهيم",
+    "الحجر",
+    "النحل",
+    "الإسراء",
+    "الكهف",
+    "مريم",
+    "طه",
+    "الأنبياء",
+    "الحج",
+    "المؤمنون",
+    "النّور",
+    "الفرقان",
+    "الشعراء",
+    "النّمل",
+    "القصص",
+    "العنكبوت",
+    "الرّوم",
+    "لقمان",
+    "السجدة",
+    "الأحزاب",
+    "سبأ",
+    "فاطر",
+    "يس",
+    "الصافات",
+    "ص",
+    "الزمر",
+    "غافر",
+    "فصّلت",
+    "الشورى",
+    "الزخرف",
+    "الدّخان",
+    "الجاثية",
+    "الأحقاف",
+    "محمد",
+    "الفتح",
+    "الحجرات",
+    "ق",
+    "الذاريات",
+    "الطور",
+    "النجم",
+    "القمر",
+    "الرحمن",
+    "الواقعة",
+    "الحديد",
+    "المجادلة",
+    "الحشر",
+    "الممتحنة",
+    "الصف",
+    "الجمعة",
+    "المنافقون",
+    "التغابن",
+    "الطلاق",
+    "التحريم",
+    "الملك",
+    "القلم",
+    "الحاقة",
+    "المعارج",
+    "نوح",
+    "الجن",
+    "المزّمّل",
+    "المدّثر",
+    "القيامة",
+    "الإنسان",
+    "المرسلات",
+    "النبأ",
+    "النازعات",
+    "عبس",
+    "التكوير",
+    "الإنفطار",
+    "المطفّفين",
+    "الإنشقاق",
+    "البروج",
+    "الطارق",
+    "الأعلى",
+    "الغاشية",
+    "الفجر",
+    "البلد",
+    "الشمس",
+    "الليل",
+    "الضحى",
+    "الشرح",
+    "التين",
+    "العلق",
+    "القدر",
+    "البينة",
+    "الزلزلة",
+    "العاديات",
+    "القارعة",
+    "التكاثر",
+    "العصر",
+    "الهمزة",
+    "الفيل",
+    "قريش",
+    "الماعون",
+    "الكوثر",
+    "الكافرون",
+    "النصر",
+    "المسد",
+    "الإخلاص",
+    "الفلق",
+    "الناس"
+  ];
+
+  QuranTab({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(width: double.infinity,
-      child: Column(children: [Image.asset("assets/images/quran_main_pg.png"),
+    return SizedBox(
+      width: double.infinity,
+      child: Column(children: [
+        Image.asset("assets/images/quran_main_pg.png"),
         Divider(
-          color: MyThemeData.colorGold,
-          indent: 10,thickness: 3,
+          color: MyThemeData.primaryColor,
+          indent: 10,
+          thickness: 3,
           height: 5,
           endIndent: 10,
         ),
         Text(
-          "SuraName",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          "Sura Name",
+          style: TextStyle(
+            fontSize: 25,
+            color: MyThemeData.primaryColor,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         Divider(
-          color: MyThemeData.colorGold,thickness: 3,
+          color: MyThemeData.primaryColor,
+          thickness: 5,
           indent: 10,
           height: 20,
           endIndent: 10,
         ),
-
-      Expanded(
-        child: ListView.separated(separatorBuilder: (context, index) =>
-            Divider(color: MyThemeData.colorGold,endIndent: 20,indent: 20),
-            itemCount: sura_name.length,
-            itemBuilder: ((context, index) {
-          return sura_items(sura_name[index],index);
-        })),
-      ),
-
-      
+        Expanded(
+          child: ListView.separated(
+              separatorBuilder: (context, index) => Divider(
+                  color: MyThemeData.primaryColor, endIndent: 20, indent: 20),
+              itemCount: sura_name.length,
+              itemBuilder: ((context, index) {
+                return sura_items(sura_name[index], index);
+              })),
+        ),
       ]),
     );
   }

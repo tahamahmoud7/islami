@@ -6,14 +6,14 @@ class sura_items extends StatelessWidget {
   String Name;
   int index;
 
-  sura_items(this.Name, this.index);
+  sura_items(this.Name, this.index,);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         Navigator.pushNamed(context, sura_details_Screen.routeName,
-            arguments: SuraDetailsArgs(Name, index));
+            arguments: SuraDetailsArgs(Name, index,));
       },
       child: Text(
         Name,
