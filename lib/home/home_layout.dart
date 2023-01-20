@@ -10,8 +10,6 @@ import '../quran/quran_tab.dart';
 import '../sebha/sebha_tab.dart';
 import '../settings/Settings_tab.dart';
 
-
-
 class HomeLayout extends StatefulWidget {
   static const String routeName = 'home';
 
@@ -24,12 +22,11 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   @override
   Widget build(BuildContext context) {
-
-    var pro=Provider.of<MyProvider>(context);
+    var pro = Provider.of<MyProvider>(context);
     return Stack(
       children: [
         Image.asset(
-         pro.getBackGeoundImage(),
+          pro.getBackGeoundImage(),
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
@@ -37,7 +34,8 @@ class _HomeLayoutState extends State<HomeLayout> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title:Text(AppLocalizations.of(context)!.islamiTitle,
+            title: Text(
+              AppLocalizations.of(context)!.islamiTitle,
               style: Theme.of(context).textTheme.headline1,
             ),
           ),
@@ -83,9 +81,4 @@ class _HomeLayoutState extends State<HomeLayout> {
     RadioTab(),
     SettingsTab(),
   ];
-
-
-  }
-
-
-
+}

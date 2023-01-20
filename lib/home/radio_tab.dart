@@ -8,7 +8,7 @@ class RadioTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Column( mainAxisAlignment: MainAxisAlignment.center,children: [
+      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Image.asset("assets/images/radio_pg.png"),
         const Center(
           child: Text(
@@ -17,17 +17,16 @@ class RadioTab extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height:20,
+          height: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.keyboard_double_arrow_left, size: 50,color: MyThemeData.primaryColor),
-            Icon(Icons.play_arrow, size: 70,color: MyThemeData.primaryColor),
-            Icon(
-              Icons.keyboard_double_arrow_right,
-              size: 50,color: MyThemeData.primaryColor
-            )
+            Icon(Icons.keyboard_double_arrow_left,
+                size: 50, color: MyThemeData.primaryColor),
+            Icon(Icons.play_arrow, size: 70, color: MyThemeData.primaryColor),
+            Icon(Icons.keyboard_double_arrow_right,
+                size: 50, color: MyThemeData.primaryColor)
           ],
         )
       ]),
