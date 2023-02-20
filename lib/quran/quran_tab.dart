@@ -134,18 +134,18 @@ class QuranTab extends StatelessWidget {
         Divider(
           color: MyThemeData.primaryColor,
           indent: 10,
-          thickness: 3,
+          thickness: 5,
           height: 5,
           endIndent: 10,
         ),
-        Text(
-          "Sura Name",
-          style: TextStyle(
-            fontSize: 25,
-            color: MyThemeData.primaryColor,
+      Text(
+        AppLocalizations.of(context)!.suraName,
+        style:  TextStyle(
+            fontSize: 25,color: MyThemeData.primaryColor,
             fontWeight: FontWeight.bold,
-          ),
-        ),
+            fontStyle: FontStyle.italic),
+      ),
+
         Divider(
           color: MyThemeData.primaryColor,
           thickness: 5,

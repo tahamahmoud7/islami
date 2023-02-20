@@ -19,7 +19,7 @@ class SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.transparent,
       body: SizedBox(
         width: double.infinity,
         child: SingleChildScrollView(

@@ -13,7 +13,8 @@ class AyaItem extends StatelessWidget {
           .textTheme
           .headline1
           ?.copyWith(fontStyle: FontStyle.normal,
-          letterSpacing: .2
+          letterSpacing: .2,
+
       ),
       textAlign: TextAlign.center,);
   }

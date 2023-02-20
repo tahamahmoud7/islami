@@ -30,11 +30,14 @@ class _sura_details_ScreenState extends State<sura_details_Screen> {
       Scaffold(
           appBar: AppBar(
             title: Text(args.SuraName,
-                style: Theme.of(context).textTheme.headline1),
+                style: Theme.of(context).textTheme.headline2,),
           ),
-          body: Container(margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+          body: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
             decoration: BoxDecoration(
-                color: Colors.white70,
+                color: MyThemeData.primaryColor,
+                //edite color
+
                 border: Border.all(color: MyThemeData.primaryColor, width: 3),
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(50),

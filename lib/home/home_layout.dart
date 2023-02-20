@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamei/home/radio_tab.dart';
+import 'package:islamei/radio/radio_tab.dart';
 import 'package:islamei/provider/my_provider.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -51,19 +51,19 @@ class _HomeLayoutState extends State<HomeLayout> {
               currentIndex: currentIndex,
               items: [
                 BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage('assets/images/quran.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/quran.png')),
                     label: AppLocalizations.of(context)!.quran),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage('assets/images/sebha.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/sebha.png')),
                     label: AppLocalizations.of(context)!.tsbeh),
                 BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage('assets/images/radio.png')),
-                    label: AppLocalizations.of(context)!.radio),
-                BottomNavigationBarItem(
-                    icon: ImageIcon(AssetImage('assets/images/ahadeth.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/ahadeth.png')),
                     label: AppLocalizations.of(context)!.ahadeth),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.settings),
+                    icon: const ImageIcon(AssetImage('assets/images/radio.png')),
+                    label: AppLocalizations.of(context)!.radio),
+                BottomNavigationBarItem(
+                    icon: const Icon(Icons.settings),
                     label: AppLocalizations.of(context)!.settings),
               ],
             ),
@@ -79,6 +79,6 @@ class _HomeLayoutState extends State<HomeLayout> {
     SebhaTab(),
     AhadethTab(),
     RadioTab(),
-    SettingsTab(),
+    const SettingsTab(),
   ];
 }

@@ -16,12 +16,12 @@ class HadethDetails extends StatelessWidget {
       ),
       Scaffold(
         appBar: AppBar(
-          title: Text(args.title, style: Theme.of(context).textTheme.headline1),
+          title: Text(args.title, style: Theme.of(context).textTheme.headline2),
         ),
         body: Container(
           margin: const EdgeInsets.symmetric(horizontal: 25,vertical: 10),
           padding: const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 20),
-          decoration: BoxDecoration(color: Colors.white70,
+          decoration: BoxDecoration(color: Colors.blueGrey,
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50)),

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [
         Locale('en'), // English, no country code
-        Locale('ar'), // Spanish, no country code
+        Locale('ar'), // Arabic, no country code
       ],
       locale: Locale(provider.languageCode),
       debugShowCheckedModeBanner: false,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islamei/my_theme.dart';
-import 'package:islamei/provider/my_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../provider/my_provider.dart';
+
 
 class LanguageBottomSheet extends StatelessWidget {
   const LanguageBottomSheet({Key? key}) : super(key: key);

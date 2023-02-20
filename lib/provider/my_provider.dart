@@ -21,12 +21,16 @@ class MyProvider extends ChangeNotifier {
     }
 
   void ChangeThemeMode(ThemeMode themeMode) {
-    mode==themeMode;
+    mode=themeMode;
     notifyListeners();
   }
 
   Color getSalectedColor(String lang) {
     return languageCode == lang ? MyThemeData.primaryColor : MyThemeData
+        .BlackColor;
+
+  } Color getSalectedColorTheme(String theme) {
+    return mode == theme ? MyThemeData.primaryColor : MyThemeData
         .BlackColor;
 
   }

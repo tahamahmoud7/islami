@@ -17,7 +17,7 @@ class _AhadethTabState extends State<AhadethTab> {
   @override
   Widget build(BuildContext context) {
     if (Ahadeth.isEmpty) loadHadethFile();
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.transparent,
       body: Column(children: [
         Image.asset("assets/images/image_ahades.png"),
         Divider(

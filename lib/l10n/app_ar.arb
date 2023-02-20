@@ -1,5 +1,6 @@
 {
   "islamiTitle": "اسلامي",
+  "suraName":"اسم السور",
   "quran": "قران",
   "tsbeh": "تسبيح",
   "radio": "راديو",
@@ -9,6 +10,6 @@
   "language": "اللغة",
   "theme": "الثيم",
   "light": "فاتح",
-  "dark": "داكن"
-
+  "dark": "داكن",
+"arabic":"عربي"
 }

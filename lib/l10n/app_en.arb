@@ -1,5 +1,6 @@
 {
   "islamiTitle": "Islami",
+  "suraName":"Sura Name",
   "quran": "Quran",
   "tsbeh": "Tsbeh",
   "radio": "Radio",
@@ -9,6 +10,7 @@
   "language": "Language",
   "theme": "Theme",
   "light": "Light",
-  "dark": "Dark"
+  "dark": "Dark",
+  "arabic":"arabic"
 
 }

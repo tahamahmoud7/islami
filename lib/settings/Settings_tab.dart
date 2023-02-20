@@ -5,7 +5,6 @@ import 'package:islamei/settings/language_bottom_sheet.dart';
 import 'package:islamei/settings/themeModeBottomSheet.dart';
 import 'package:provider/provider.dart';
 
-
 class SettingsTab extends StatelessWidget {
   static const String routName = "Settings";
 
@@ -68,15 +67,15 @@ class SettingsTab extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Text("Ligth", style: Theme.of(context).textTheme.subtitle1),
-
+            child:Text(pro.mode == "Light" ? "Light" : "Dark",
+                style: Theme.of(context).textTheme.subtitle1),
           ),
         ),
       ]),
     );
   }
 
-  showThemeModeBottomSheet(BuildContext context) {
+  void showThemeModeBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       builder: (context) {
