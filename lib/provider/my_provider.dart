@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:islamei/my_theme.dart';
 
@@ -21,6 +20,7 @@ class MyProvider extends ChangeNotifier {
     }
 
   void ChangeThemeMode(ThemeMode themeMode) {
+
     mode=themeMode;
     notifyListeners();
   }
@@ -29,14 +29,7 @@ class MyProvider extends ChangeNotifier {
     return languageCode == lang ? MyThemeData.primaryColor : MyThemeData
         .BlackColor;
 
-  } Color getSalectedColorTheme(String theme) {
-    return mode == theme ? MyThemeData.primaryColor : MyThemeData
-        .BlackColor;
-
   }
-
-
-
 
 
 

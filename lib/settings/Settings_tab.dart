@@ -67,7 +67,7 @@ class SettingsTab extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(20),
             ),
-            child:Text(pro.mode == "Light" ? "Light" : "Dark",
+            child: Text(pro.mode == "Light" ? "Light" : "Dark",
                 style: Theme.of(context).textTheme.subtitle1),
           ),
         ),

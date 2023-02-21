@@ -11,15 +11,14 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp( ChangeNotifierProvider(
-      create: (context) => MyProvider(),
-      child: MyApp()));
+  runApp(ChangeNotifierProvider(
+      create: (context) => MyProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var provider=Provider.of<MyProvider>(context);
+    var provider = Provider.of<MyProvider>(context);
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -39,7 +38,6 @@ class MyApp extends StatelessWidget {
         sura_details_Screen.routeName: ((context) => sura_details_Screen()),
         HadethDetails.routeName: ((context) => HadethDetails()),
         SettingsTab.routName: (context) => SettingsTab(),
-
       },
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
