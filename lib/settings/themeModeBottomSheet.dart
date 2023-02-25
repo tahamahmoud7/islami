@@ -17,68 +17,61 @@ class _ShowThemeBottomSheetState extends State<ShowThemeBottomSheet> {
     var provider = Provider.of<MyProvider>(context);
 
     return Container(
-      padding: const EdgeInsets.all(14.0),
+      margin: const EdgeInsets.all(20),
       child: Column(
         children: [
           InkWell(
-              onTap: () {
-                provider.ChangeThemeMode(ThemeMode.light);
-                Navigator.pop(context);
-              },
-              child: showThemeSelected("Light", ThemeMode.light, context)),
+            onTap: () {
+              provider.ChangeThemeMode(ThemeMode.light);
+              Navigator.pop(context);
+            },
+            child: Row(
+              children: [
+                Text(
+                  "Light",
+                  style: Theme.of(context).textTheme.headline1?.copyWith(
+                      color: provider.mode == ThemeMode.light
+                          ? MyThemeData.primaryColor
+                          : MyThemeData.BlackColor),
+                ),
+                const Spacer(),
+                Icon(Icons.done,
+                    color: provider.mode == ThemeMode.light
+                        ? MyThemeData.primaryColor
+                        : MyThemeData.BlackColor),
+              ],
+            ),
+          ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           InkWell(
-              onTap: () {
-                provider.ChangeThemeMode(ThemeMode.dark);
-                Navigator.pop(context);
-              },
-              child: showThemeSelected("Dark", ThemeMode.dark, context))
+            onTap: () {
+              provider.ChangeThemeMode(ThemeMode.dark);
+              Navigator.pop(context);
+            },
+            child: Row(
+              children: [
+                Text(
+                  "Dark",
+                  style: Theme.of(context).textTheme.headline1?.copyWith(
+                      color: provider.mode == ThemeMode.dark
+                          ? MyThemeData.primaryColor
+                          : MyThemeData.BlackColor),
+                ),
+                const Spacer(),
+                Icon(
+                  Icons.done,
+                  size: 30,
+                  color: provider.mode == ThemeMode.dark
+                      ? MyThemeData.primaryColor
+                      : MyThemeData.BlackColor,
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
-  }
-
-  Widget? showThemeSelected(
-      String text, ThemeMode themeMode, BuildContext context) {
-    if (ThemeMode.light == themeMode) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            'Light',
-            style: Theme.of(context)
-                .textTheme
-                .bodyText1!
-                .copyWith(color: Theme.of(context).primaryColorDark),
-          ),
-          Icon(
-            Icons.check,
-            color: Theme.of(context).primaryColor,
-          ),
-        ],
-      );
-    } else {
-      const SizedBox(
-        height: 10,
-      );
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            text,
-            style: Theme.of(context).textTheme.headline1?.copyWith(
-                color: Theme.of(context) == ThemeMode.dark
-                    ? MyThemeData.primaryColor
-                    : MyThemeData.BlackColor),
-          ),
-          Icon(Icons.done,
-              color: Theme.of(context) == "Dark"
-                  ? MyThemeData.primaryColor
-                  : MyThemeData.BlackColor),
-        ],
-      );
-    }
   }
 }

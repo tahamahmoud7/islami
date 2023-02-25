@@ -36,7 +36,7 @@ class SettingsTab extends StatelessWidget {
               border: Border.all(
                 color: MyThemeData.primaryColor,
               ),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
             child: Text(pro.languageCode == "en" ? "English" : "Arabic",
                 style: Theme.of(context).textTheme.subtitle1),
@@ -65,12 +65,14 @@ class SettingsTab extends StatelessWidget {
               border: Border.all(
                 color: MyThemeData.primaryColor,
               ),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
             ),
-            child: Text(pro.mode == "Light" ? "Light" : "Dark",
+            child: Text(pro.mode == ThemeMode.light ? "Light" : "Dark",
                 style: Theme.of(context).textTheme.subtitle1),
+
           ),
         ),
+
       ]),
     );
   }
@@ -79,7 +81,7 @@ class SettingsTab extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return const ShowThemeBottomSheet();
+        return  ShowThemeBottomSheet();
       },
     );
   }
